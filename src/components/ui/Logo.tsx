@@ -7,17 +7,20 @@ interface LogoProps {
 }
 
 /**
- * Brand logo mark + wordmark. Edit the label text in src/config/site.ts.
+ * Brand logo: the Kinoah trident emblem in a dark badge + wordmark.
+ * ⚠️ REPLACE the emblem at public/images/brand/logo-gold.png and the label
+ * text in src/config/site.ts (brandShort / tagline).
  */
 export default function Logo({ light = false, className = '' }: LogoProps) {
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
-      {/* Mark */}
-      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-gradient shadow-gold">
-        <svg viewBox="0 0 32 32" className="h-6 w-6" aria-hidden>
-          <path d="M16 4 L27 26 H21 L16 15 L11 26 H5 Z" fill="#000" />
-          <path d="M16 15 L21 26 H11 Z" fill="#1a1a1a" />
-        </svg>
+      {/* Emblem in a dark badge — keeps the gold mark high-contrast on any nav state */}
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brandBlack shadow-gold ring-1 ring-brandGold/30">
+        <img
+          src="/images/brand/logo-gold.png"
+          alt={`${siteConfig.brandName} logo`}
+          className="h-7 w-7 object-contain"
+        />
       </span>
       {/* Wordmark */}
       <span className="flex flex-col leading-none">
@@ -28,7 +31,7 @@ export default function Logo({ light = false, className = '' }: LogoProps) {
         >
           {siteConfig.brandShort}
         </span>
-        <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-brandOrange">
+        <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-brandOrange">
           {siteConfig.tagline}
         </span>
       </span>

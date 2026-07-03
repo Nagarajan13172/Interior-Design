@@ -1,4 +1,4 @@
-# Aurum Build & Interiors
+# Kinoah Creations
 
 A premium, production-ready **construction & interior design** company website built with **React + TypeScript + Vite + Tailwind CSS**, animated with **Framer Motion**, and featuring an interactive **Three.js** 3D interior showcase.
 
@@ -10,8 +10,9 @@ A premium, production-ready **construction & interior design** company website b
 
 - Sticky, scroll-aware navbar with active-section highlighting + clean mobile hamburger menu
 - Full-screen hero with warm gold/black image overlays, animated reveal, and stats
-- 11 sections: Home, About, Services, Construction Process, Interior Design, Gypsum Ceiling, Wooden Works, 3D Showcase, Portfolio (with filter + detail modal), FAQ, Contact
+- 12 sections: Home, About, Services, Construction Process, Interior Design, Gypsum Ceiling, Wooden Works, 3D Showcase, Portfolio (with filter + detail modal), **Gallery** (client's own photos, filterable + lightbox), FAQ, Contact
 - Interactive 3D showcase: a built-in Three.js room, a Sketchfab embed, and a slot for your own `.glb`/`.gltf` — with a Suspense loader and a graceful error fallback
+- Gallery of the client's real project photos (`public/images/work/`) with category filters and a keyboard-navigable lightbox
 - Fully responsive (375 / 768 / 1024 / 1440), accessible (focus rings, aria labels, keyboard nav), and `prefers-reduced-motion` aware
 - Code-split: Three.js loads only when the 3D showcase is reached
 
@@ -78,11 +79,13 @@ All content lives in plain data files under **`src/data/`** and **`src/config/`*
 | `src/data/portfolio.ts` | Projects & filter categories |
 | `src/data/faqs.ts` | FAQ questions/answers |
 | `src/data/models.ts` | 3D showcase gallery |
-| `src/data/images.ts` | **Every image URL** |
+| `src/data/gallery.ts` | **Gallery** photos (the client's own work, with categories/titles) |
+| `src/data/images.ts` | Contextual section imagery (hero, services, process, portfolio, etc.) |
 
 ### Rename the brand
 
 Open **`src/config/site.ts`** and edit `brandName`, `brandShort`, and `tagline`. It updates the navbar, footer, logo, and page metadata everywhere.
+The logo emblem is at **`public/images/brand/logo-gold.png`** (and the favicon at `public/favicon.png`) — replace those files to change the mark.
 
 ### SEO / page title
 
@@ -102,9 +105,9 @@ contact: {
   phoneHref: 'tel:+919876543210',
   whatsapp: '+91 98765 43210',
   whatsappHref: 'https://wa.me/919876543210', // wa.me/<countrycode><number>
-  email: 'hello@aurumbuild.com',
-  emailHref: 'mailto:hello@aurumbuild.com',
-  address: 'No. 24, Aurum Towers, Anna Salai, Chennai, Tamil Nadu 600002',
+  email: 'hello@kinoahcreations.com',
+  emailHref: 'mailto:hello@kinoahcreations.com',
+  address: 'No. 24, 2nd Floor, Main Road, Chennai, Tamil Nadu 600002',
   mapHref: 'https://maps.google.com/?q=Chennai',
   ...
 }
@@ -112,17 +115,13 @@ contact: {
 
 ### Images
 
-All images are centralised in **`src/data/images.ts`**. The site currently uses the
-client's own project photography stored in **`public/images/work/`** as
-`work-01.jpg … work-63.jpg`, referenced via a small `w(n)` helper.
+There are **two** image sources:
 
-To swap or add images:
+1. **Section imagery** (hero, About, services, process, gypsum ideas, portfolio, 3D poster, contact) lives in **`src/data/images.ts`** as free Unsplash URLs — generic "contextual" visuals. Replace the URL strings, or point them at local files (`'/images/my-hero.jpg'` from `public/`, or an `import` from `src/assets/images/`).
 
-- **Replace a photo in place:** overwrite the file in `public/images/work/` (keep the same name), or drop a new file there and point the relevant key at it — e.g. `hero: w(13)` → `hero: w(20)`.
-- **Use a brand-new file/name:** put it anywhere under `public/` and reference it by path, e.g. `hero: '/images/my-hero.jpg'`.
-- **Bundled assets:** alternatively import from `src/assets/images/` — `import hero from '../assets/images/hero.jpg'` then set `hero`.
+2. **The Gallery** shows the client's **own project photos** from **`public/images/work/`** (`work-01.jpg … work-64.jpg`), configured in **`src/data/gallery.ts`**. To add photos, drop files into `public/images/work/` and append a `g(number, category, title)` entry.
 
-Each key in `images.ts` has a comment describing what the photo shows, so you can rematch them to sections easily.
+> The 65 photos supplied were imported into `public/images/work/`; one (`IMG_2166.png`) was used as the **logo** and the rest populate the Gallery.
 
 ### The contact form
 
@@ -154,7 +153,7 @@ src/
 │   ├── layout/                 # Navbar, Footer, FloatingActions
 │   ├── sections/               # Hero, About, Services, ConstructionProcess,
 │   │                           #   InteriorDesign, GypsumCeiling, WoodenWorks,
-│   │                           #   ThreeDShowcase, Portfolio, Faq, Contact
+│   │                           #   ThreeDShowcase, Portfolio, Gallery, Faq, Contact
 │   └── ui/                     # Button, SectionTitle, ServiceCard, ProcessStep,
 │                               #   ProjectCard, InteriorModelViewer, Accordion,
 │                               #   Checklist, DataTable, Logo, Reveal
@@ -181,4 +180,4 @@ The original Tamil source notes (used to author the English content) are preserv
 
 ---
 
-Built for **Aurum Build & Interiors**. Replace the branding and make it yours.
+Built for **Kinoah Creations**. Replace the branding and make it yours.

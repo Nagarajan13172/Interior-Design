@@ -14,5 +14,6 @@ export const navLinks: NavLink[] = [
   { label: 'Woodwork', href: 'wooden' },
   { label: '3D Showcase', href: 'showcase' },
   { label: 'Projects', href: 'portfolio' },
+  { label: 'Gallery', href: 'gallery' },
   { label: 'Contact', href: 'contact' },
 ]

@@ -55,14 +55,14 @@ export default function About() {
             viewport={viewportOnce}
           >
             <SectionTitle
-              eyebrow="About Aurum"
+              eyebrow="About Kinoah"
               title="Designing Homes."
               highlight="Building Trust."
               align="left"
             />
             <div className="mt-6 space-y-5 text-base leading-relaxed text-brandGray">
               <p>
-                At Aurum Build &amp; Interiors, we help homeowners transform
+                At Kinoah Creations, we help homeowners transform
                 vacant plots into beautifully planned, structurally sound, and
                 elegantly finished living spaces. Our process covers every
                 important stage — documentation guidance, plan approval support,

@@ -7,13 +7,13 @@
 
 export const siteConfig = {
   /* ⚠️ REPLACE: Brand name (also used in the logo, navbar, footer, SEO). */
-  brandName: 'Aurum Build & Interiors',
-  brandShort: 'Aurum',
-  tagline: 'Build & Interiors',
+  brandName: 'Kinoah Creations',
+  brandShort: 'Kinoah',
+  tagline: 'Creations',
 
   /* Short brand description used in the footer and meta tags. */
   description:
-    'Aurum Build & Interiors delivers premium construction, interior design, gypsum ceiling, and wooden work solutions for modern homes.',
+    'Kinoah Creations delivers premium construction, interior design, gypsum ceiling, and wooden work solutions for modern homes.',
 
   /* ⚠️ REPLACE: Contact details. */
   contact: {
@@ -24,7 +24,7 @@ export const siteConfig = {
     email: 'hello@aurumbuild.com', // ⚠️ REPLACE: Email
     emailHref: 'mailto:hello@aurumbuild.com', // ⚠️ REPLACE: Email
     // ⚠️ REPLACE: Office address
-    address: 'No. 24, Aurum Towers, Anna Salai, Chennai, Tamil Nadu 600002',
+    address: 'No. 24, 2nd Floor, Main Road, Chennai, Tamil Nadu 600002',
     // ⚠️ REPLACE: Google Maps link for the office location
     mapHref: 'https://maps.google.com/?q=Chennai',
     workingHours: 'Mon – Sat · 9:30 AM to 7:00 PM',

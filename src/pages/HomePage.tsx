@@ -7,6 +7,7 @@ import GypsumCeiling from '../components/sections/GypsumCeiling'
 import WoodenWorks from '../components/sections/WoodenWorks'
 import ThreeDShowcase from '../components/sections/ThreeDShowcase'
 import Portfolio from '../components/sections/Portfolio'
+import Gallery from '../components/sections/Gallery'
 import Faq from '../components/sections/Faq'
 import Contact from '../components/sections/Contact'
 
@@ -26,6 +27,7 @@ export default function HomePage() {
       <WoodenWorks />
       <ThreeDShowcase />
       <Portfolio />
+      <Gallery />
       <Faq />
       <Contact />
     </main>
